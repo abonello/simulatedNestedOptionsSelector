@@ -1,5 +1,8 @@
 # Nested Options Selector - A simulation
 
+
+See [Demo](https://abonello.github.io/simulatedNestedOptionsSelector/)
+
 I created two versions:
 
 1. based on bootstrap 4 Accordion
