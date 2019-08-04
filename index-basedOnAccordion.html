@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nested Options</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <style>
+        body, html {
+            font-size: 10px;
+        }
+        pre {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 2rem;
+        }
+        #accordionMain {
+            border: 1px solid black;
+            color: black;
+            text-decoration: none;
+        }
+        #accordionMain h5 button {
+            color: black;
+            font-size: 2.5rem;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+        }
+        #accordionMain h5 button:hover,
+        #accordionMain h5 button:focus,
+        #accordionMain  h5 button:active {
+            text-decoration: none;
+
+        }
+        #accordionMain .card-header:hover {
+            background-color: #a9b8c1;
+        }
+        .main-section-btn {
+            padding-left: 3rem;
+        }
+        .food-item-btn {
+            padding-left: 4rem;
+        }
+        .card-body {
+            padding: 0;
+        }
+        .card-body-text {
+            padding: 4rem;
+        }
+        .card-body ul {
+            list-style: none;
+        }
+        .card-body ul a,
+        .card-body ul a:hover {
+            text-decoration: none;
+            color: black;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Nested options</h1>
+        <p>I will try to build this as nested accordions.</p>
+        <hr>
+        <pre>
+            Draft of structure:
+    
+            Top trigger             ^
+                Section 1           ^
+                    Item 1
+                    Item 2
+                    Item 3
+                Section 2           v
+                Section 3           v
+                Section 4           v
+    
+    
+        </pre>
+        <hr>
+
+        <div id="accordionMain">
+
+            <!-- START Accordion Section 1 -->
+            <div class="card">
+                <div class="card-header" id="headingSection1">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSection1"
+                            aria-expanded="false" aria-controls="collapseSection1">
+                            Mains
+                        </button>
+                    </h5>
+                </div>
+
+                <!-- Menu Section 1 -->
+                <div id="collapseSection1" class="collapse" aria-labelledby="headingSection1" data-parent="#accordionMain">
+                    <div class="card-body">
+                        <div id="accordionSection1">
+                            <!-- START Section 1 - Card 1 -->
+                            <div class="card">
+                                <div class="card-header" id="headingOne1">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed main-section-btn" data-toggle="collapse" data-target="#collapseOne1"
+                                            aria-expanded="false" aria-controls="collapseOne1">
+                                            Menu Section #1
+                                        </button>
+                                    </h5>
+                                </div>
+                            
+                                <div id="collapseOne1" class="collapse" aria-labelledby="headingOne1" data-parent="#accordionSection1">
+                                    <div class="card-body">
+                            
+                                        <div id="accordionSection1Group1">
+                            
+                                            <!-- START Section 1 - Inner Card 1 -->
+                                            <div class="card">
+                                                <div class="card-header" id="headingInnerOne">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed food-item-btn" data-toggle="collapse"
+                                                            data-target="#collapseInnerOne" aria-expanded="false" aria-controls="collapseInnerOne">
+                                                            Food Item #1
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                            
+                                                <div id="collapseInnerOne" class="collapse" aria-labelledby="headingInnerOne"
+                                                    data-parent="#accordionSection1Group1">
+                                                    <div class="card-body card-body-text">
+                                                        Card in Section1 - Card 1<br>
+                                                        Picture and info for food item 1.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Section 1 - Inner Card 1 -->
+                                            <!-- Start Section 1 - Inner Card 2 -->
+                                            <div class="card">
+                                                <div class="card-header" id="headingInnerTwo">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed food-item-btn" data-toggle="collapse"
+                                                            data-target="#collapseInnerTwo" aria-expanded="false" aria-controls="collapseInnerTwo">
+                                                            Food Item #1
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                            
+                                                <div id="collapseInnerTwo" class="collapse" aria-labelledby="headingInnerTwo"
+                                                    data-parent="#accordionSection1Group1">
+                                                    <div class="card-body card-body-text">
+                                                        Card in Section1 - Card 2<br>
+                                                        Picture and info for food item 2.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Section 1 - Inner Card 2 -->
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Section 1 - Card 1 -->
+                            
+                            <!-- START Section 1 - Card 2 -->
+                            <div class="card">
+                                <div class="card-header" id="headingOne2">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed main-section-btn" data-toggle="collapse" data-target="#collapseOne2"
+                                            aria-expanded="false" aria-controls="collapseOne2">
+                                            Menu Section #2
+                                        </button>
+                                    </h5>
+                                </div>
+                            
+                                <div id="collapseOne2" class="collapse" aria-labelledby="headingOne1" data-parent="#accordionSection1">
+                                    <div class="card-body">
+                            
+                                        <div id="accordion4">
+                            
+                                            <!-- Start Inner Card 2-1 -->
+                                            <div class="card">
+                                                <div class="card-header" id="headingInnerOne1">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed food-item-btn" data-toggle="collapse"
+                                                            data-target="#collapseInnerOne1" aria-expanded="false"
+                                                            aria-controls="collapseInnerOne1">
+                                                            Food Group 1
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                            
+                                                <div id="collapseInnerOne1" class="collapse" aria-labelledby="headingInnerOne1"
+                                                    data-parent="#accordion4">
+                                                    <div class="card-body card-body-text">
+                                                        <ul>
+                                                            <li><a href="#">Food Item 1</a></li>
+                                                            <li><a href="#">Food Item 2</a></li>
+                                                            <li><a href="#">Food Item 3</a></li>
+                                                            <li><a href="#">Food Item 4</a></li>
+                                                            <li><a href="#">Food Item 5</a></li>
+                                                            <li><a href="#">Food Item 6</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Inner Card 2-1 -->
+                                            <!-- Start Inner Card 2-2 -->
+                                            <div class="card">
+                                                <div class="card-header" id="headingInnerTwo1">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed food-item-btn" data-toggle="collapse"
+                                                            data-target="#collapseInnerTwo1" aria-expanded="false"
+                                                            aria-controls="collapseInnerTwo1">
+                                                            Food Group 2
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                            
+                                                <div id="collapseInnerTwo1" class="collapse" aria-labelledby="headingInnerTwo1"
+                                                    data-parent="#accordion4">
+                                                    <div class="card-body">
+                                                        <ul>
+                                                            <li><a href="#">Food Item 1</a></li>
+                                                            <li><a href="#">Food Item 2</a></li>
+                                                            <li><a href="#">Food Item 3</a></li>
+                                                            <li><a href="#">Food Item 4</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Inner Card 2-2 -->
+                                        </div>
+                            
+                            
+                            
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Section 1 - Card 2 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Accordion Section 1 -->
+
+
+        </div>
+
+
+
+        <hr>
+
+    </div> <!-- End Main container -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+</body>
+</html>
