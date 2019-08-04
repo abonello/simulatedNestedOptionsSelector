@@ -58,34 +58,34 @@
         #main-trigger > li {
             position: relative;
         }
-        #main-trigger > li.openHeader::after {
+        #main-trigger>li.openHeader>a::before {
             content: '^';
             font-size: 2rem;
             position: absolute;
-            top: 20px; 
+            top: 0px; 
             right: 10px;
         }
-        #main-trigger > li::after {
+        #main-trigger>li>a::before {
             content: 'V';
             position: absolute;
-            top: 20px; 
+            top: 0px; 
             right: 10px;
         }
 
-        #mainMenu > li {
+        #mainMenu>li {
             position: relative;
         }
-        #mainMenu > li.openHeader::before {
+        #mainMenu>li.openHeader>a::before {
             content: '^';
             font-size: 2rem;
             position: absolute;
-            top: 20px; 
+            top: 0px; 
             right: 10px;
         }
-        #mainMenu > li::before {
+        #mainMenu>li>a::before {
             content: 'V';
             position: absolute;
-            top: 20px; 
+            top: 0px; 
             right: 10px;
         }
 
@@ -135,7 +135,7 @@
         .menuHide {
             display: none;
         }
-        #mainMenu li.openHeader {
+        #mainMenu > li.openHeader {
             background-color: yellow;
         }
 
